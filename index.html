@@ -1,1 +1,94 @@
-html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- ===== Header / Navbar ===== -->
+  <header>
+    <h1>My Portfolio</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="themeToggle">Toggle Theme</button>
+  </header>
+
+  <!-- ===== Hero Section ===== -->
+  <section class="hero">
+    <div class="intro">
+      <h2>Hello, I'm <span class="highlight">Rhoanne Maclanng</span></h2>
+      <p>Front-End Developer • Designer • Student</p>
+    </div>
+    <div class="profile-pic shape-circle">
+      <img src="images/IMG_20230112_203314.jpg" alt="My Profile Picture">
+    </div>
+  </section>
+
+  <!-- ===== About Section ===== -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I love building clean and responsive websites with creative designs.</p>
+  </section>
+
+  <!-- ===== Work Section (with shapes) ===== -->
+  <section id="work">
+    <h2>My Work</h2>
+
+    <label for="shapeFilter">Filter by shape: </label>
+    <select id="shapeFilter">
+      <option value="all">All</option>
+      <option value="shape-circle">Circle</option>
+      <option value="shape-diamond">Diamond</option>
+      <option value="shape-hexagon">Hexagon</option>
+      <option value="shape-triangle">Triangle</option>
+    </select>
+
+    <div class="gallery">
+      <div class="card shape-circle" data-shape="shape-circle">
+        <img src="images/work1.jpg" alt="Project 1">
+        <p>Project One</p>
+      </div>
+
+      <div class="card shape-diamond" data-shape="shape-diamond">
+        <img src="images/work2.jpg" alt="Project 2">
+        <p>Project Two</p>
+      </div>
+
+      <div class="card shape-hexagon" data-shape="shape-hexagon">
+        <img src="images/work3.jpg" alt="Project 3">
+        <p>Project Three</p>
+      </div>
+
+      <div class="card shape-triangle" data-shape="shape-triangle">
+        <img src="images/work4.jpg" alt="Project 4">
+        <p>Project Four</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact Section ===== -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>© <span id="year"></span> My Portfolio</p>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>

@@ -73,7 +73,7 @@ span{
     color: var(--text-color);
     margin-left: 4rem;
     font-weight: 500;
-    transition: all 0.3 ease-in-out;
+    transition: all 0.3s ease-in-out;
     border-bottom: 3px solid transparent;
 }
 .navbar a:hover{
@@ -89,6 +89,7 @@ span{
         #662d91 10%,
         #800080 100%
     );
+    color: white;
     letter-spacing: 1px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
@@ -97,5 +98,5 @@ span{
 
 }
 .gradient-btn:hover{
-    transform: scale(1.0);
+    transform: scale(1.05);
 }

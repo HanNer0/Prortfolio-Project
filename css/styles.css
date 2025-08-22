@@ -237,9 +237,9 @@ section{
 
 .about-img img{
     width: 32vw;
-    border: 50%;
+    border-radius: 50%;
     box-shadow: 0 0 25px var(--main-color);
-    transition: 0.3s ease-in-out;
+    transition: 0.4s ease-in-out;
 }
 
 .about-img img:hover{
@@ -376,21 +376,19 @@ section{
     padding: 5rem 2rem;
     overflow: hidden;
     cursor: pointer;
-    box-shadow: 0 0 5px var(--main-color);
+    box-shadow: 0 0 2px var(--main-color);
     transition: 0.3s ease;
-
 }
 
 .project-card:hover{
     box-shadow: 0 0 25px var(--main-color),
                 0 0 50px var(--main-color);
     transform: scale(1.02);
-
 }
 
 .project-card img{
     max-width: 300px;
-    border-radius: 2rm;
+    border-radius: 2em;
     object-fit: cover;
 
 }
@@ -403,6 +401,7 @@ section{
 .project-card p{
     font-size: 1.6rem;
 }
+
 
 /*Contact Section || IM ALMOST THERE T-T*/
 
@@ -503,7 +502,7 @@ section{
         display: block;
         font-size: 2rem;
         margin: 3rem 0;
-        color: white;
+        color: var(--text-color);
 
     }
 
@@ -530,6 +529,7 @@ section{
 
     .home-img img{
         width: 56vw;
+        
     }
     
     .about{
@@ -544,7 +544,7 @@ section{
     }
 
     .about img{
-        width: 52vw;
+        width: 52vm;
 
     }
 

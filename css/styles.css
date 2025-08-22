@@ -528,7 +528,7 @@ section{
 
     }
 
-    .home-img{
+    .home-img img{
         width: 56vw;
     }
     
@@ -543,7 +543,7 @@ section{
         margin: 2rem 0;
     }
 
-    .about-img{
+    .about-img img{
         width: 52vm;
 
     }

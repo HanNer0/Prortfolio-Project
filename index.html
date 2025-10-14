@@ -1,238 +1,229 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css"/>
 <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
-    <title>Porfolio Website</title>
-    <!-- Own stylesheet -->
-    <link rel="stylesheet" href="css/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Website</title>
 
-    <!-- Boxicons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<!-- Own stylesheet -->
+<link rel="stylesheet" href="css/styles.css">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+<!-- Boxicons -->
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 </head>
 
-<!--Everything Starts here gurly~-->
 <body>
 
-    <header class="header">
-        <a href="#home" class="logo">
-            Rhoanne <span>Maclang</span>
+<header class="header">
+  <a href="#home" class="logo">Rhoanne <span>Maclang</span></a>
+  <i class="bx bx-menu" id="menu-icon"></i>
 
-        </a>
+  <nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-        <i class="bx bx-menu" id="menu-icon"></i>
+  <button class="gradient-btn">Contact Me</button>
+</header>
 
-        <nav class="navbar">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
+<!-- Home -->
+<section class="home" id="home">
+  <div class="stars"></div>
+  <div class="twinkling"></div>
+  <div class="overlay"></div>
 
-        <button class="gradient-btn">Contact Me</button>
+  <div class="home-content autoShow">
+    <h1>Hi, It's a me~ <span>Rhoanne</span></h1>
+    <h3>I'm a <span>Web Developer</span></h3>
+    <p>"I am currently honing my skills in web developing, game developing and arts as part of my studies at La Consolacion University of the Philippines."</p>
 
-    </header>
+    <div class="social-icons fadeUp">
+      <a href="#"><i class="bx bxl-github"></i></a>
+      <a href="#"><i class="bx bxl-linkedin-square"></i></a>
+      <a href="#"><i class="bx bxl-instagram-alt"></i></a>
+      <a href="#"><i class="bx bxl-twitter"></i></a>
+    </div>
 
-    <!--Home Part-->
-    <section class="home" id="home">
-        <div class="home-content autoShow">
-            <h1> Hi, It's a me~ <span>Rhoanne</span></h1>
-            <h3>
-                I'm a <span>Web Developer</span>
-            </h3>
-            <p>"I am currently honing my skills in web developing, game developing and arts as part of my studies at La Consolacion University of the Philippines."</p>
+    <div class="btn-group">
+      <a href="#" class="btn">Hire</a>
+      <a href="#contact" class="btn">Contact</a>
+    </div>
+  </div>
 
-            <div class="social-icons fadeUp">
-                <a href="#">
-                    <i class="bx bxl-github"></i>
-                </a>
+  <div class="home-img">
+    <img src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/Hoshino%20AI.jpeg" alt="">
+  </div>
+</section>
 
-                <a href="#">
-                    <i class="bx bxl-linkedin-square"></i>
-                </a>
+<!-- About -->
+<section class="about" id="about">
+  <div class="stars"></div>
+  <div class="twinkling"></div>
+  <div class="overlay"></div>
 
-                <a href="#">
-                    <i class="bx bxl-instagram-alt"></i>
-                </a>
+  <div class="about-img">
+    <img src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/Hoshino%20AI.jpeg" alt="about profile img" class="imageReveal">
+  </div>
 
-                <a href="#">
-                    <i class="bx bxl-twitter"></i>
-                </a>
-            </div>
+  <div class="about-content autoShow">
+    <h2>About <span>Me</span></h2>
+    <p>I'm currently a student at La Consolacion University of the Philippines, focusing on web development, game development, and art. My goal is to combine these skills to create dynamic and engaging digital projects.</p>
+    <a href="#" class="btn">Read More</a>
+  </div>
+</section>
 
-            <div class="btn-group">
-                <a href="#" class="btn">Hire</a>
-                <a href="#contact" class="btn">Contact</a>
-            </div>
-        </div>
-        <div class="home-img">
-            <img src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/profileImg.jpg" alt="">
-        </div>
-    </section>
+<!-- Services -->
+<section class="services" id="services">
+  <div class="stars"></div>
+  <div class="twinkling"></div>
+  <div class="overlay"></div>
 
-    <!--About Part-->
-    <section class="about" id="about">
-        <div class="about-img">
-            <img src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/profileImg.jpg" alt="about profile img" class="imageReveal">
-        </div>
+  <h2 class="heading fadeUp">Services</h2>
 
-        <div class="about-content autoShow">
-            <h2>About <span>Me</span></h2>
-            <p>I'm currently a student at La Consolacion University of the Philippines, focusing on web development, game development, and art. My goal is to combine these skills to create dynamic and engaging digital projects.</p>
-            <a href="#" class="btn">Read More</a>
-        </div>
-    </section>
+  <div class="services-container">
+    <div class="service-box fadeUp">
+      <div class="service-info">
+        <i class="bx bxl-figma"></i>
+        <h4>UI / UX Design</h4>
+        <p>My projects have given me hands-on experience using Figma for UI/UX design, where I've focused on creating intuitive and user-friendly interfaces.</p>
+      </div>
+    </div>
 
-    <!--Servies Part-->
-    <section class="services" id="services">
-        <h2 class="heading fadeUp">Services</h2>
+    <div class="service-box fadeUp">
+      <div class="service-info">
+        <i class="bx bx-joystick"></i>
+        <h4>Game Development</h4>
+        <p>Through my game development projects, I've gained hands-on experience in the fundamentals of game design and development.</p>
+      </div>
+    </div>
 
-        <div class="services-container">
-            <div class="service-box fadeUp">
-                <div class="service-info">
-                    <i class="bx bxl-figma"></i>
-                    <h4>UI / UX Design</h4>
-                    <p>My projects have given me hands-on experience using Figma for UI/UX design, where I've focused on creating intuitive and user-friendly interfaces.</p>
-                </div>
-            </div>
+    <div class="service-box fadeUp">
+      <div class="service-info">
+        <i class="bx bx-image"></i>
+        <h4>Art</h4>
+        <p>I also have a background in digital art, which I apply to my web and game development projects to create custom assets and graphics.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <div class="service-box fadeUp">
-                <div class="service-info">
-                    <i class="bx bx-joystick"></i>
-                    <h4>Game Development</h4>
-                    <p>Through my game development projects, I've gained hands-on experience in the fundamentals of game design and development.</p>
-                </div>
-            </div>
+<!-- Projects -->
+<section class="projects" id="projects">
+  <div class="stars"></div>
+  <div class="twinkling"></div>
+  <div class="overlay"></div>
 
-            <div class="service-box fadeUp">
-                <div class="service-info">
-                    <i class="bx bx-image"></i>
-                    <h4>Art</h4>
-                    <p>I also have a background in digital art, which I apply to my web and game development projects to create custom assets and graphics.</p>
-                </div>
-            </div>
-        </div>
+  <h2 class="heading fadeUp">Projects</h2>
 
-    </section>
+  <ul class="projects-list">
+    <li class="project-item fadeUp">
+      <img src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/GOYO.jpg" alt="GOYO Project">
+      <div class="project-info">
+        <h3>GOYO</h3>
+        <p>This was a collaborative project from my junior year, where our team focused on making a sleep monitoring app to help users track their sleep and improve their overall well-being.</p>
+        <a href="#" class="btn">Review Project</a>
+      </div>
+    </li>
 
-    <!--Projects Part-->
-    <section class="projects" id="projects">
-        <h2 class="heading fadeUp">Projects</h2>
+    <li class="project-item fadeUp">
+      <img src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/Epic%20Website.png" alt="Epic Saga Fanpage">
+      <div class="project-info">
+        <h3>Epic Saga Fanpage</h3>
+        <p>This is a collection of my artwork I've created over the years since I began my studies, where I've explored different mediums to develop a personal style and build a wide range of artistic skills.</p>
+        <a href="#" class="btn">Review Project</a>
+      </div>
+    </li>
 
-        <div class="projects-box">
-            <div class="project-card fadeUp">
-                <img src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/GOYO.jpg" alt="">
-                <h3>GOYO</h3>
-                <p>This was a collaborative project from my junior year, where our team focused on making a sleep monitoring app to help users track their sleep and improve their overall well-being.</p>
-                <div class="btn">Review Project</div>
-            </div>
+    <li class="project-item fadeUp">
+      <img src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/Game%20Samples.jpg" alt="Game Samples">
+      <div class="project-info">
+        <h3>Game Samples</h3>
+        <p>This is a collection of game samples I created for a personal project, reflecting my own journey to apply my skills in game development and visual design. Samples from the internet help me adjust to this field.</p>
+        <a href="#" class="btn">Review Project</a>
+      </div>
+    </li>
 
-            <div class="project-card fadeUp">
-                <img src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/Epic%20Website.png" alt="">
-                <h3>Epic Saga Fanpage</h3>
-                <p>This is a collection of my artwork I've created over the years since I began my studies, where I've explored different mediums to develop a personal style and build a wide range of artistic skills.</p>
-                <div class="btn">Review Project</div>
-            </div>
+    <li class="project-item fadeUp">
+      <img src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/Art%20Samples.jpg" alt="Art Samples">
+      <div class="project-info">
+        <h3>Art Samples</h3>
+        <p>This is a collection of my artwork I've created over the years since I began my studies, where I've explored different mediums to develop a personal style and build a wide range of artistic skills.</p>
+        <a href="#" class="btn">Review Project</a>
+      </div>
+    </li>
+  </ul>
+</section>
 
-            <div class="project-card fadeUp">
-                <img src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/Game%20Samples.jpg" alt="">
-                <h3>Game Samples</h3>
-                <p>This is a collection of game samples I created for a personal project, reflecting my own journey to apply my skills in game development and visual design. Samples in the internet helps me adjust to this field.</p>
-                <div class="btn">Review Project</div>
-            </div>
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="stars"></div>
+  <div class="twinkling"></div>
+  <div class="overlay"></div>
 
-            <div class="project-card fadeUp">
-                <img src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/Art%20Samples.jpg" alt="">
-                <h3>Art Samples</h3>
-                <p>This is a collection of my artwork I've created over the years since I began my studies, where I've explored different mediums to develop a personal style and build a wide range of artistic skills.</p>
-                <div class="btn">Review Project</div>
-            </div>
+  <h2 class="heading fadeUp">Contact <span>Me</span></h2>
 
+  <form action="#">
+    <div class="input-group fadeUp">
+      <div class="input-box">
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email">
+      </div>
 
+      <div class="input-box">
+        <input type="number" placeholder="Phone Number">
+        <input type="text" placeholder="Subject">
+      </div>
+    </div>
 
+    <div class="input-group-2">
+      <textarea placeholder="Your Message" cols="30" rows="10"></textarea>
+      <input type="submit" value="Send Message" class="btn">
+    </div>
+  </form>
+</section>
 
-        </div>
+<!-- Footer -->
+<footer class="footer">
+  <div class="social-icons">
+    <a href="#"><i class="bx bxl-github"></i></a>
+    <a href="#"><i class="bx bxl-linkedin-square"></i></a>
+    <a href="#"><i class="bx bxl-instagram-alt"></i></a>
+    <a href="#"><i class="bx bxl-twitter"></i></a>
+  </div>
 
-    </section>
+  <ul class="list">
+    <li><a href="#">FAQ</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About Me</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 
-    <section class="contact" id="contact">
-        <h2 class="heading fadeUp">Contact <span>Me</span></h2>
+  <p class="copyright">@ Rhoanne Maclang | All Rights Reserved</p>
+</footer>
 
-        <form action="#">
-            <div class="input-group fadeUp">
-                <div class="input-box">
-                    <input type="text" placeholder="Full Name">
-                    <input type="email" placeholder="Email">
+<div class="background-particles"></div>
 
-                </div>
-                <div class="input-box">
-                    <input type="number" placeholder="Phone Number">
-                    <input type="Text" placeholder="Subject">
+<script src="js/script.js"></script>
+<script>
+for (let i = 0; i < 40; i++) {
+  const dot = document.createElement('span');
+  dot.classList.add('particle');
+  dot.style.left = Math.random() * 100 + 'vw';
+  dot.style.animationDuration = 5 + Math.random() * 10 + 's';
+  dot.style.width = dot.style.height = Math.random() * 6 + 'px';
+  document.querySelector('.background-particles').appendChild(dot);
+}
+</script>
 
-                </div>
-
-            </div>
-
-            <div class="input-group-2">
-                <textarea name="" id="" placeholder="Your Message" cols="30" rows="10"></textarea>
-                <input type="submit" value="Send Message" class="btn">
-            </div>
-        </form>
-    </section>
-
-    <footer class="footer">
-        <div class="social-icons">
-                <a href="#">
-                    <i class="bx bxl-github"></i>
-                </a>
-
-                <a href="#">
-                    <i class="bx bxl-linkedin-square"></i>
-                </a>
-
-                <a href="#">
-                    <i class="bx bxl-instagram-alt"></i>
-                </a>
-
-                <a href="#">
-                    <i class="bx bxl-twitter"></i>
-                </a>
-            </div>
-
-            <ul class="list">
-                <li>
-                    <a href="#">FAQ</a>
-                </li>
-
-                <li>
-                    <a href="#services">Services</a>
-                </li>
-
-                <li>
-                    <a href="#about">About Me</a>
-                </li>
-
-                <li>
-                    <a href="#projects">Projects</a>
-                </li>
-
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
-
-            </ul>
-
-            <p class="copyright">
-                @ Rhoanne Maclang | All Rights Reserved
-            </p>
-    </footer>
-
-    <script src="js/script.js"></script>
 </body>
 </html>

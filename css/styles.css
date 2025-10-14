@@ -17,9 +17,8 @@
 }
 
 html{
-    font-size: 60%;
+    font-size: 60%;a
     overflow-x: hidden;
-    scroll-snap-type: y proximity;
     
 
 }
@@ -28,11 +27,39 @@ section{
     scroll-snap-align: start;
 }
 
-body{
-    background: var(--bg-color);
-    color: var(--text-color);
-
+body {
+  color: var(--text-color);
+  background: #080808;
+  overflow-x: hidden;
+  position: relative;
 }
+
+/* The Star Layers */
+.stars, .twinkling {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+.stars {
+  background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+  z-index: -2;
+}
+
+.twinkling {
+  background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+  animation: moveStars 100s linear infinite;
+  z-index: -1;
+}
+
+@keyframes moveStars {
+  from { background-position: 0 0; }
+  to { background-position: -10000px 5000px; }
+}
+
+
 
 /*Header Part*/
 .header{
@@ -237,7 +264,7 @@ section{
     justify-content: center;
     align-items: center;
     gap: 10rem;
-    background: var(--second-bg-color);
+    background: rgba(0, 0, 0, 0.7)
 
 }
 
@@ -289,7 +316,7 @@ section{
 }
 
 .services{
-    background-color: var(--bg-color);
+    background-color: rgba(0, 0, 0, 0.5);
     color: black;
 
 }
@@ -357,62 +384,89 @@ section{
 }
 
 /*Projects Section*/
-.projects{
-    background-color: var(--second-bg-color);
+.projects {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10rem 15%;
 }
 
-.projects-box{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    place-items: center;
-    gap: 3rem;
-    row-gap: 5rem;
+.projects h2 {
+  color: var(--text-color);
 }
 
-.project-card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: var(--bg-color);
-    border: 2px solid var(--main-color);
-    border-radius: 3rem;
-    gap: 2rem;
-    padding: 5rem 2rem;
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: 0 0 2px var(--main-color);
-    transition: 0.3s ease;
+/* List layout for projects */
+.projects-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  margin-top: 4rem;
 }
 
-.project-card:hover{
-    box-shadow: 0 0 25px var(--main-color),
-                0 0 50px var(--main-color);
-    transform: scale(1.02);
+.project-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  flex-wrap: wrap;
 }
 
-.project-card img{
-    max-width: 300px;
-    border-radius: 2em;
-    object-fit: cover;
-
+.project-item:nth-child(even) {
+  flex-direction: row-reverse;
+  text-align: right;
 }
 
-.project-card h3{
-    font-size: 3rem;
-
+.project-item:nth-child(even) .project-info {
+  align-items: flex-end;
 }
 
-.project-card p{
-    font-size: 1.6rem;
+.project-item:nth-child(even) .btn {
+  align-self: flex-end;
 }
+
+.project-item img {
+  width: 45%;
+  max-width: 500px;
+  border-radius: 1.5rem;
+  border: 2px solid var(--main-color);
+  transition: 0.3s ease-in-out;
+}
+
+.project-item img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px var(--main-color);
+}
+
+.project-info {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-info h3 {
+  font-size: 3rem;
+  color: var(--main-color);
+  margin-bottom: 1.5rem;
+}
+
+.project-info p {
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+.project-info .btn {
+  align-self: flex-start;
+}
+
 
 
 /*Contact Section || IM ALMOST THERE T-T*/
 
 .contact{
-    background-color: var(--bg-color);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .contact h2{
@@ -446,8 +500,12 @@ section{
 
 /*Footer Section || FINALLY HUHUHUHUHUHUHUHUHUHUHU*/
 .footer{
-    background-color: var(--second-bg-color);
+    background: rgba(0, 0, 0, 0.384);
+    backdrop-filter: blur(10px);       /* adds soft blur */
     padding: 50px 0;
+    color: var(--text-color);
+    position: relative;
+    z-index: 10;
 
 }
 
@@ -476,6 +534,7 @@ section{
 
 .footer ul li a:hover{
     border-bottom: 3px solid var(--main-color);
+  
 
 }
 

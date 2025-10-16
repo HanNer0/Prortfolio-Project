@@ -1,11 +1,11 @@
 // ====== MENU TOGGLE ======
-let menuIcon = document.querySelector('.menu-icon);
-let navbar = document.querySelector('.navbar');
+const menuIcon = document.getElementById('menu-icon');
+const navbar = document.querySelector('.navbar');
 
-menuIcon.onclick = () => {
-  menuIcon.classList.toggle("bx-x");
-  navbar.classList.toggle("active");
-};
+menuIcon.addEventListener('click', () => {
+  navbar.classList.toggle('active');
+});
+
 
 // ====== BACKGROUND PARTICLES ======
 const bg = document.querySelector(".background-particles");

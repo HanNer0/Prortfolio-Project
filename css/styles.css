@@ -79,26 +79,88 @@ body::before {
   to { background-position: -10000px 5000px; }
 }
 
+.futuristic-shapes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
 
+.futuristic-shapes span {
+  position: absolute;
+  display: block;
+  border: 1px solid rgba(102, 45, 145, 0.3);
+  border-radius: 8%;
+  animation: floatShapes 20s linear infinite;
+  filter: drop-shadow(0 0 10px rgba(102, 45, 145, 0.8));
+  opacity: 0.5;
+}
+
+@keyframes floatShapes {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+  }
+}
+
+.floating-image {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 
 
 
 /*Header Part*/
-.header{
-    position: fixed;
-    width: 100%;
-    top: 0%;
-    left: 0%;
-    padding: 4rem 15%;
-    background: rgba(0, 0, 0, 0.384);
-    backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2.5rem 12%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(12px);
+  background: rgba(10, 0, 25, 0.35);
+  border-bottom: 1px solid rgba(178, 110, 255, 0.3);
+  box-shadow: 0 0 20px rgba(102, 45, 145, 0.3);
+  z-index: 1000;
+  overflow: hidden;
 }
 
+/* Animated glowing border line under header */
+.header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -50%;
+  width: 200%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--main-color), transparent);
+  animation: headerGlowLine 6s linear infinite;
+}
+
+@keyframes headerGlowLine {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 /*Logo Part*/
 #menu-icon{
     font-size: 3.5rem;
@@ -114,8 +176,8 @@ body::before {
     transition: 0.3s ease-in-out;
 }
 .logo:hover{
+    text-shadow: 0 0 25px var(--main-color), 0 0 50px #b26eff;
     transform: scale(1.1);
-
 }
 
 /*Gradient Effects kinemberlu*/
@@ -131,40 +193,101 @@ span{
 }
 
 /*Navigation animation*/
-.navbar a{
-    font-size: 1.8rem;
-    color: var(--text-color);
-    margin-left: 4rem;
-    font-weight: 500;
-    transition: all 0.3s ease-in-out;
-    border-bottom: 3px solid transparent;
+.navbar a {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  margin-left: 3rem;
+  font-weight: 500;
+  position: relative;
+  letter-spacing: 1px;
+  transition: 0.3s ease-in-out;
 }
-.navbar a:hover{
-    color: var(--main-color);
-    border-bottom: 3px solid var(--main-color);
-}
-.gradient-btn{
-    font-size: 1.8rem;
-    padding: 1rem 2rem;
-    border-radius: 3rem;
-    position: relative;
-    background: linear-gradient(
-        270deg,
-        #662d91 10%,
-        #800080 100%
-    );
-    color: white;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-    border: none;
-    white-space: nowrap;
 
+/* Glowing hover underline effect */
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: var(--main-color);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
+  box-shadow: 0 0 10px var(--main-color);
 }
-.gradient-btn:hover{
-    transform: scale(1.1);
 
+.navbar a:hover {
+  color: var(--main-color);
+  text-shadow: 0 0 10px var(--main-color);
 }
+
+.navbar a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Menu Icon (mobile toggle) */
+#menu-icon {
+  font-size: 3.5rem;
+  color: var(--main-color);
+  display: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#menu-icon:hover {
+  text-shadow: 0 0 15px var(--main-color);
+}
+
+.gradient-btn {
+  position: relative;
+  display: inline-block;
+  font-size: 1.8rem;
+  padding: 1rem 3rem;
+  border-radius: 1rem; /* changed from 3rem → 1rem */
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(270deg, #662d91 10%, #800080 100%);
+  border: 1px solid rgba(102, 45, 145, 0.6);
+  box-shadow: 0 0 15px rgba(102, 45, 145, 0.3);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.4s ease;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Light sweep animation */
+.gradient-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.gradient-btn:hover::before {
+  left: 100%;
+}
+
+/* Hover glow & lift */
+.gradient-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #662d91, 0 0 50px #b26eff;
+  border-color: #b26eff;
+}
+
 
 /*Gradient Button hover effects... IM ADDING MORE EFFECTSSSSS LOL*/
 .gradient-btn::after {
@@ -263,26 +386,45 @@ section{
     display: flex;
     gap: 1.5rem;
 }
-
-.btn{
-    display: inline-block;
-    padding: 1rem 3rem;
-    background-color: var(--main-color);
-    box-shadow: 0 0 25px var(--main-color);
-    border-radius: 3rem;
-    font-size: 1.8rem;
-    color: black;
-    border: 2px solid transparent;
-    font-weight: 600;
-    transition: 0.3s ease-in-out;
+/* ===== Futuristic Buttons ===== */
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: white;
+  background: rgba(102, 45, 145, 0.1);
+  border: 1px solid rgba(102, 45, 145, 0.6);
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(102, 45, 145, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  overflow: hidden;
+  transition: 0.4s ease;
 }
 
-.btn:hover{
-    transform: scale(1.05);
-    box-shadow: 0 0 25px var(--main-color),
-                0 0 50px var(--main-color);
-
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: 0.5s;
 }
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn:hover {
+  box-shadow: 0 0 25px var(--main-color), 0 0 50px #b26eff;
+  border-color: #b26eff;
+  transform: scale(1.05);
+}
+
 
 .btn-group a:nth-of-type(2){
     background-color: black;
@@ -375,23 +517,25 @@ section{
 }
 
 .service-box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--main-color);
-    height: 600px;
-    border-radius: 3rem;
-    cursor: pointer;
-    border: 5px solid transparent;
-    transition: 0.4s ease-in-out;
+    position: relative;
+    background: rgba(100, 0, 150, 0.15); /* brighter purple tint */
+    border: 1px solid rgba(182, 101, 255, 0.4);
+    border-radius: 1.5rem;
+    box-shadow: 
+        0 0 15px rgba(182, 101, 255, 0.2),
+        inset 0 0 20px rgba(182, 101, 255, 0.1);
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+    backdrop-filter: blur(12px); /* adds glassy effect */
 
 }
 
 .service-box:hover{
-    background: var(--second-bg-color);
-    color: var(--main-color);
-    border: 5px solid var(--main-color);
     transform: scale(1.03);
+    box-shadow:
+    0 0 25px rgba(182, 101, 255, 0.5),
+    inset 0 0 25px rgba(182, 101, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.6);
 
 }
 
@@ -409,6 +553,7 @@ section{
     font-size: 4rem;
     margin: 2rem 0;
     font-weight: 800;
+    color: #fff
 
 }
 
@@ -416,11 +561,14 @@ section{
     font-size: 1.4rem;
     font-weight: 600;
     line-height: 1.7;
+    color: #fff
 
 }
 
 .service-info i{
     font-size: 8rem;
+    color: #b26eff
+    
 }
 
 /*Projects Section*/
@@ -773,45 +921,25 @@ section{
     }
 }
 /* ===== IMAGE POPUP STYLING ===== */
-.image-popup {
+#imagePopup {
+  display: none; /* hide by default */
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  align-items: center;
   justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+  align-items: center;
   z-index: 9999;
 }
 
-.image-popup.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.image-popup img {
+#imagePopup img {
   max-width: 90%;
   max-height: 90%;
+  border: 3px solid #fff;
   border-radius: 10px;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-  animation: popIn 0.3s ease;
-  cursor: zoom-out;
-}
-
-@keyframes popIn {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
 }
 
 
@@ -832,3 +960,4 @@ section{
     text-shadow: none;
   }
 }
+

@@ -1,5 +1,5 @@
 // ====== MENU TOGGLE ======
-let menuIcon = document.querySelector('.menu-icon');
+let menuIcon = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
 
 menuIcon.onclick = () => {
@@ -21,20 +21,16 @@ if (bg) {
 }
 
 // ====== IMAGE POPUP ======
-const popup = document.createElement("div");
-popup.className = "image-popup";
-popup.innerHTML = `<img src="" alt="popup image">`;
-document.body.appendChild(popup);
-
+const popup = document.getElementById("imagePopup");
 const popupImg = popup.querySelector("img");
 
-document.querySelectorAll("img").forEach((img) => {
+document.querySelectorAll(".floating-image").forEach(img => {
   img.addEventListener("click", () => {
     popupImg.src = img.src;
-    popup.classList.add("active");
+    popup.style.display = "flex";
   });
 });
 
 popup.addEventListener("click", () => {
-  popup.classList.remove("active");
+  popup.style.display = "none";
 });

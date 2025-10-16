@@ -1,5 +1,5 @@
 // ====== MENU TOGGLE ======
-const menuIcon = document.getElementById('menu-icon');
+const menuIcon = document.getElementById('.menu-icon');
 const navbar = document.querySelector('.navbar');
 
 menuIcon.addEventListener('click', () => {

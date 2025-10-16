@@ -1,10 +1,11 @@
-let menuIcon = document.querySelector('#menu-icon');
+let menuIcon = document.querySelector("menu-icon");
 let navbar = document.querySelector('.navbar');
 
-menuIcon.onclick = () => {
-  menuIcon.classList.toggle('bx-x');
-  navbar.classList.toggle('active');
+menuIcon.onclick = () =>{
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
 }
+
 
 for (let i = 0; i < 40; i++) {
   const dot = document.createElement('span');
@@ -14,3 +15,17 @@ for (let i = 0; i < 40; i++) {
   dot.style.width = dot.style.height = Math.random() * 6 + 'px';
   document.querySelector('.background-particles').appendChild(dot);
 }
+
+const popup = document.getElementById('imagePopup');
+  const popupImg = popup.querySelector('img');
+
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('click', () => {
+      popupImg.src = img.src;
+      popup.classList.add('active');
+    });
+  });
+
+  popup.addEventListener('click', () => {
+    popup.classList.remove('active');
+  });

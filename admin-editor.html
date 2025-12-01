@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Edit Portfolio Content</title>
+
+<style>
+/* ===== RESET & VARIABLES ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --bg-color: #080808;
+  --panel-bg: rgba(100, 0, 150, 0.15);
+  --border-glow: rgba(182, 101, 255, 0.4);
+  --text-color: #ffffff;
+  --main-color: #662d91;
+}
+
+/* ===== BODY BACKGROUND ===== */
+body {
+  min-height: 100vh;
+  padding: 4rem 8%;
+  color: var(--text-color);
+  background:
+    radial-gradient(circle at 20% 30%, #0a0018, #000 70%),
+    radial-gradient(circle at 80% 80%, #1a0033, #000 90%);
+  overflow-x: hidden;
+}
+
+/* ===== PAGE TITLE ===== */
+h1 {
+  font-size: 4rem;
+  margin-bottom: 4rem;
+  text-align: center;
+  background: linear-gradient(270deg, #662d91, #b26eff);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 30px rgba(178, 110, 255, 0.6);
+}
+
+[data-img],
+[data-img-input] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+
+
+/* ===== SECTIONS (GLASS CARDS) ===== */
+section {
+  background: var(--panel-bg);
+  border: 1px solid var(--border-glow);
+  border-radius: 1.8rem;
+  max-width: 760px;
+  margin: 0 auto 3rem;
+  padding: 2.5rem;
+  margin-bottom: 4rem;
+  backdrop-filter: blur(14px);
+  box-shadow:
+    0 0 20px rgba(182, 101, 255, 0.25),
+    inset 0 0 25px rgba(182, 101, 255, 0.06);
+  transition: 0.4s ease;
+}
+
+section:hover {
+  transform: scale(1.01);
+  box-shadow:
+    0 0 30px rgba(182, 101, 255, 0.5),
+    inset 0 0 25px rgba(182, 101, 255, 0.15);
+}
+
+/* ===== SECTION TITLES ===== */
+section h2 {
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  color: #fff;
+  text-shadow: 0 0 12px var(--main-color);
+}
+
+/* ===== TEXTAREAS ===== */
+textarea {
+  width: 100%;
+  min-height: 90px;
+  margin-bottom: 2rem;
+  padding: 1.5rem 1.8rem;
+  resize: vertical;
+  font-size: 1.4rem;
+  color: var(--text-color);
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 1.2rem;
+  border: 1px solid rgba(102, 45, 145, 0.6);
+  box-shadow: inset 0 0 10px rgba(102, 45, 145, 0.3);
+  transition: 0.3s ease;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #b26eff;
+  box-shadow:
+    0 0 15px rgba(178, 110, 255, 0.6),
+    inset 0 0 10px rgba(178, 110, 255, 0.3);
+}
+
+/* ===== BUTTON BASE ===== */
+button {
+  padding: 1.2rem 3rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-radius: 1.2rem;
+  border: 1px solid rgba(102, 45, 145, 0.6);
+  background: linear-gradient(270deg, #662d91, #800080);
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.4s ease;
+  box-shadow: 0 0 20px rgba(102, 45, 145, 0.4);
+}
+
+/* ===== BUTTON HOVER ===== */
+button:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 35px rgba(182, 101, 255, 0.9),
+    0 0 70px rgba(182, 101, 255, 0.4);
+}
+
+/* ===== BUTTON LAYOUT ===== */
+#saveAll,
+#resetAll,
+button[onclick="logout()"] {
+  margin-right: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Reset button (warning look) */
+#resetAll {
+  background: linear-gradient(270deg, #aa0000, #ff0044);
+  border-color: #ff0044;
+}
+
+/* Logout button */
+button[onclick="logout()"] {
+  background: linear-gradient(270deg, #111, #333);
+  border-color: #666;
+}
+
+.button-group {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.button-group button {
+  margin: 0 0.8rem;        /* spacing between buttons */
+  padding: 0.8rem 2rem;    /* make buttons smaller */
+  font-size: 1.2rem;       /* slightly smaller text */
+}
+
+
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+  body {
+    padding: 3rem 5%;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  section {
+    padding: 2.5rem;
+  }
+}
+
+/* ===== NEON FLICKER TITLE ===== */
+.neon-flicker {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  color: white;
+  text-shadow:
+    0 0 5px #662d91,
+    0 0 10px #662d91,
+    0 0 20px #9b4dff,
+    0 0 40px #b26eff,
+    0 0 80px #cc88ff;
+  animation: neonFlicker 1.6s infinite;
+
+}
+
+/* Randomized flicker animation */
+@keyframes neonFlicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    opacity: 1;
+    text-shadow:
+      0 0 5px #662d91,
+      0 0 10px #662d91,
+      0 0 20px #9b4dff,
+      0 0 40px #b26eff,
+      0 0 80px #cc88ff;
+  }
+  20%, 24%, 55% {
+    opacity: 0.35;
+    text-shadow: none;
+  }
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  text-align: center;
+}
+
+.modal-content {
+  display: inline-block;
+  margin: 15% auto;
+  background: var(--panel-bg);
+  padding: 2rem 3rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(182,101,255,0.5);
+}
+
+.modal-content button {
+  margin: 1rem;
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(102,45,145,0.6);
+  background: linear-gradient(270deg,#662d91,#800080);
+  color: white;
+  cursor: pointer;
+}
+
+/* Warning Popup */
+.warning-popup {
+  display: none; /* MUST be hidden initially */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+
+.popup-content {
+  background: rgba(10,0,25,0.9);
+  padding: 3rem 5rem;
+  border-radius: 2rem;
+  text-align: center;
+  box-shadow: 0 0 30px var(--main-color);
+  border: 2px solid var(--main-color);
+  animation: popupAppear 0.3s ease forwards;
+}
+
+.popup-content h2 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.popup-content p {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+}
+
+.popup-buttons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+@keyframes popupAppear {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+
+
+
+
+</style>
+</head>
+
+<body>
+
+<h1 class="neon-flicker">🛠 Edit Entire Portfolio</h1>
+
+
+<section>
+  <h2>Profile Images</h2>
+
+  <!-- Home Image -->
+  <img src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/Hoshino%20AI.jpeg"
+      data-img="home_image"
+      style="max-width:200px; display:block; margin-bottom:1rem; border-radius:1rem;">
+  <input type="file" accept="image/*" data-img-input="home_image">
+
+<h2>Home</h2>
+<label>Home Description</label>
+<textarea data-key="home_desc"></textarea>
+
+<h2>About</h2>
+<label>About Description</label>
+<textarea data-key="about_desc"></textarea>
+</section>
+
+
+<section>
+<h2>Services</h2>
+<label>Service 1</label>
+<textarea data-key="service_uiux_title"></textarea>
+<label>Service 1 Description</label>
+<textarea data-key="service_uiux_desc"></textarea>
+
+<label>Service 2</label>
+<textarea data-key="service_game_title"></textarea>
+<label>Service 2 Description</label>
+<textarea data-key="service_game_desc"></textarea>
+
+<label>Service 3</label>
+<textarea data-key="service_art_title"></textarea>
+<label>Service 3 Description</label>
+<textarea data-key="service_art_desc"></textarea>
+</section>
+
+<section>
+<h2>Projects</h2>
+
+<label>Project 1</label>
+<textarea data-key="project_goyo_title"></textarea>
+<label>Project 1 Description</label>
+<textarea data-key="project_goyo_desc"></textarea>
+
+<label>Project 2</label>
+<textarea data-key="project_epic_title"></textarea>
+<label>Project 2 Description</label>
+<textarea data-key="project_epic_desc"></textarea>
+
+<label>Project 3</label>
+<textarea data-key="project_game_title"></textarea>
+<label>Project 3 Description</label>
+<textarea data-key="project_game_desc"></textarea>
+
+<label>Project 4</label>
+<textarea data-key="project_art_title"></textarea>
+<label>Project 4 Description</label>
+<textarea data-key="project_art_desc"></textarea>
+</section>
+
+<section>
+<h2>Footer</h2>
+<textarea data-key="footer_text"></textarea>
+</section>
+
+
+<div class="button-group">
+  <button id="saveAll">Save All</button>
+  <button id="resetAll">Reset</button>
+  <button onclick="logout()">Logout</button>
+</div>
+
+<!-- Save Confirmation Modal -->
+<div id="saveModal" class="modal">
+  <div class="modal-content">
+    <p>⚠️ Are you sure you want to save all changes?</p>
+    <button id="confirmSave">Yes, Save</button>
+    <button id="cancelSave">Cancel</button>
+  </div>
+</div>
+
+<div id="resetWarning" class="warning-popup">
+  <div class="popup-content">
+    <h2 class="neon-flicker">⚠ Warning!</h2>
+    <p>Are you sure you want to reset all changes? This cannot be undone.</p>
+    <div class="popup-buttons">
+      <button class="gradient-btn" id="confirmReset">Yes, Reset</button>
+      <button class="gradient-btn" id="cancelReset">Cancel</button>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+function logout(){
+  localStorage.removeItem("isAdmin");
+  location.href="index.html";
+}
+</script>
+
+
+<script>
+window.addEventListener("beforeunload", () => {
+  localStorage.removeItem("isAdmin");
+});
+</script>
+
+
+<script src="admin-editor.js"></script>
+
+<script>
+function activateAdmin() {
+    // Ask for password
+    let password = prompt("Enter the admin password:");
+
+    // Check password
+    if (password === null || password !== "adminrhoanne") {
+        // If cancel is clicked (null) or wrong password
+        alert("Access denied. Redirecting back to portfolio.");
+        window.location.href = "index.html"; // Replace with your portfolio page URL
+        return; // Stop execution
+    }
+
+    // If password is correct
+    alert("Welcome Admin!");
+    document.body.classList.add("admin-active"); // Example: enable admin features
+}
+
+// Automatically run admin check when page loads
+window.addEventListener("load", () => {
+    activateAdmin();
+});
+
+
+</script>
+
+
+</body>
+</html>

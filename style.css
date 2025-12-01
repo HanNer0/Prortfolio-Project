@@ -52,6 +52,13 @@ body::before {
   to { transform: rotate(360deg); }
 }
 
+.gradient-text {
+  background: linear-gradient(270deg, #662d91, #800080);
+  background-clip: text;
+  color: transparent;
+}
+
+
 /* ============= CHATBOT PART ============= */
 
 #chatbot-toggler{

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css"/>
+<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio Website</title>
+
+<!-- Own stylesheet -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Boxicons -->
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+
+<!-- EmailJS -->>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "VOH1sh3LfpXbTVCs9",
+      });
+   })();
+</script>
+
+</head>
+
+<body class="scanlines">
+
+  <div class="futuristic-shapes">
+  <span style="top:90%; left:5%; width:100px; height:60px;"></span>
+  <span style="top:70%; left:80%; width:60px; height:60px; border-radius:50%;"></span>
+  <span style="top:50%; left:40%; width:80px; height:80px;"></span>
+  <span style="top:20%; left:10%; width:120px; height:70px; transform: rotate(45deg);"></span>
+  <span style="top:10%; left:75%; width:70px; height:50px;"></span>
+</div>
+
+
+<header class="header">
+  <a href="#home" class="logo">Rhoanne <span>Maclang</span></a>
+  
+  <i class="bx bx-menu" id="menu-icon"></i>
+
+  <nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <button href ="#contact" class="gradient-btn">Contact Me</button>
+</header>
+
+<!-- Home -->
+<section class="home" id="home">
+  <div class="stars"></div>
+  <div class="twinkling"></div>
+  <div class="overlay"></div>
+
+  <div class="home-content autoShow">
+    <h1>Hi, It's a me~ <span>Rhoanne</span></h1>
+    <h3>I'm a <span>Web Developer</span></h3>
+    <p id="hero-description" data-key="home_desc">"I am currently honing my skills in web developing, game developing and arts as part of my studies at La Consolacion University of the Philippines."</p>
+
+    <div class="social-icons fadeUp">
+      <a href="#" onclick="openGithub()"><i class="bx bxl-github"></i></a>
+      <a href="#"><i class="bx bxl-linkedin-square"></i></a>
+      <a href="#" onclick="openInsta()"><i class="bx bxl-instagram-alt"></i></a>
+      <a href="#"><i class="bx bxl-twitter"></i></a>
+    </div>
+
+    <div class="btn-group">
+      <a href="#" class="btn">Hire</a>
+      <a href="#contact" class="btn">Contact</a>
+    </div>
+  </div>
+
+  <div class="home-img">
+    <img data-img="home_image" alt="Profile Image" src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/Hoshino%20AI.jpeg" alt="">
+  </div>
+</section>
+
+<!-- About -->
+<section class="about" id="about">
+  <div class="stars"></div>
+  <div class="twinkling"></div>
+  <div class="overlay"></div>
+
+  <div class="about-img">
+    <img data-img="home_image" alt="Profile Image" src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/Hoshino%20AI.jpeg" alt="about profile img" class="imageReveal">
+  </div>
+
+  <div class="about-content autoShow ">
+    <h2 id="about-title" data-key="about_title">About <span class="gradient-text">Me</span></h2>
+    <p id="about-description" data-key="about_desc">I'm currently a student at La Consolacion University of the Philippines, focusing on web development, game development, and art. My goal is to combine these skills to create dynamic and engaging digital projects.</p>
+    <a href="#" class="btn">Read More</a>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="services" id="services">
+  <div class="stars"></div>
+  <div class="twinkling"></div>
+  <div class="overlay"></div>
+
+  <h2 class="heading fadeUp neon-flicker">Services</h2>
+
+  <div class="services-container">
+    <div class="service-box fadeUp">
+      <div class="service-info">
+        <i class="bx bxl-figma"></i>
+        <h4 data-key="service_uiux_title">UI / UX Design</h4>
+        <p data-key="service_uiux_desc">My projects have given me hands-on experience using Figma for UI/UX design, where I've focused on creating intuitive and user-friendly interfaces.</p>
+      </div>
+    </div>
+
+    <div class="service-box fadeUp">
+      <div class="service-info">
+        <i class="bx bx-joystick"></i>
+        <h4 data-key="service_game_title">Game Development</h4>
+        <p data-key="service_game_desc">Through my game development projects, I've gained hands-on experience in the fundamentals of game design and development.</p>
+      </div>
+    </div>
+
+    <div class="service-box fadeUp">
+      <div class="service-info">
+        <i class="bx bx-image"></i>
+        <h4 data-key="service_art_title">Art</h4>
+        <p data-key="service_art_desc"> I also have a background in digital art, which I apply to my web and game development projects to create custom assets and graphics.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section class="projects" id="projects">
+  <div class="stars"></div>
+  <div class="twinkling"></div>
+  <div class="overlay"></div>
+
+  <h2 class="heading fadeUp glow-text">Projects</h2>
+
+  <ul class="projects-list">
+    <li class="project-item fadeUp">
+      <img src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/GOYO.jpg" alt="GOYO Project" class="floating-image">
+      <div class="project-info">
+        <h3 id="project1-title" data-key="project_goyo_title">
+          GOYO</h3>
+        <p id="project1-description" data-key="project_goyo_desc">
+          This was a collaborative project from my junior year, where our team focused on making a sleep monitoring app to help users track their sleep and improve their overall well-being.</p>
+        <a  class="btn" onclick="openGoyo()">Review Project</a>
+      </div>
+    </li>
+
+    <li class="project-item fadeUp">
+      <img src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/Epic%20Website.png" alt="Epic Saga Fanpage" class="floating-image">
+      <div class="project-info">
+        <h3 id="project2-title" data-key="project_epic_title">
+          Epic Saga Fanpage</h3>
+        <p id="project2-description" data-key="project_epic_desc">
+          This is a collection of my artwork I've created over the years since I began my studies, where I've explored different mediums to develop a personal style and build a wide range of artistic skills.</p>
+        <a class="btn" onclick="openEpic()">Review Project</a>
+      </div>
+    </li>
+
+    <li class="project-item fadeUp">
+      <img src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/Game%20Samples.jpg" alt="Game Samples" class="floating-image">
+      <div class="project-info">
+        <h3 id="project3-title" data-key="project_game_title">
+          Game Samples</h3>
+        <p id="project3-description" data-key="project_game_desc">
+          This is a collection of game samples I created for a personal project, reflecting my own journey to apply my skills in game development and visual design. Samples from the internet help me adjust to this field.</p>
+        <a href="#" class="btn">Review Project</a>
+      </div>
+    </li>
+
+    <li class="project-item fadeUp">
+      <img src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/Art%20Samples.jpg" alt="Art Samples" class="floating-image">
+      <div class="project-info">
+        <h3 id="project4-title" data-key="project_art_title">
+          Art Samples</h3>
+        <p id="project4-description" data-key="project_art_desc">
+          This is a collection of my artwork I've created over the years since I began my studies, where I've explored different mediums to develop a personal style and build a wide range of artistic skills.</p>
+        <a href="#" class="btn">Review Project</a>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="stars"></div>
+  <div class="twinkling"></div>
+  <div class="overlay"></div>
+
+  <h2 class="heading fadeUp ne">Contact <span>Me</span></h2>
+
+  <form id="contact-form" onsubmit="sendMail(event)">
+    <div class="input-group fadeUp">
+      <div class="input-box">
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+      </div>
+
+      <div class="input-box">
+        <input type="number" id="phoneNum" placeholder="Phone Number" required>
+        <input type="text" id="subject" placeholder="Subject" required>
+      </div>
+    </div>
+
+    <div class="input-group-2">
+      <textarea placeholder="Your Message" id="message" cols="30" rows="10" required></textarea>
+      <input type="submit" value="Send Message" class="gradient-btn">
+    </div>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="social-icons">
+    <a href="#" onclick="openGithub()"><i class="bx bxl-github"></i></a>
+    <a href="#"><i class="bx bxl-linkedin-square"></i></a>
+    <a href="#" onclick="openInsta()"><i class="bx bxl-instagram-alt"></i></a>
+    <a href="#"><i class="bx bxl-twitter"></i></a>
+  </div>
+
+  <ul class="list">
+    <li><a href="#">FAQ</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About Me</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <p class="copyright" data-key="footer_text" id="footer_text">@ Rhoanne Maclang | All Rights Reserved</p>
+</footer>
+
+<div class="background-particles"></div>
+
+<div id="imagePopup">
+  <img src="" alt="Enlarged view">
+</div>
+
+<button id="chatbot-toggler">
+  <span class="material-symbols-rounded">mode_comment</span>
+  <span class="material-symbols-rounded">close</span>
+</button>
+
+<div class="chatbot-popup">
+
+  <!-- Chatbot Header -->
+  <div class="chat-header">
+    <div class="header-info">
+      <svg class="chatbot-logo" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 1024 1024">
+        <path d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 106.8h81.5v111.1c0 .7.8 1.1 1.4.7l166.9-110.6 41.8-.8h117.4l43.6-.4c59 0 106.8-47.8 106.8-106.8V394.5c0-59-47.8-106.9-106.8-106.9zM351.7 448.2c0-29.5 23.9-53.5 53.5-53.5s53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5-53.5-23.9-53.5-53.5zm157.9 267.1c-67.8 0-123.8-47.5-132.3-109h264.6c-8.6 61.5-64.5 109-132.3 109zm110-213.7c-29.5 0-53.5-23.9-53.5-53.5s23.9-53.5 53.5-53.5 53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5zM867.2 644.5V453.1h26.5c19.4 0 35.1 15.7 35.1 35.1v121.1c0 19.4-15.7 35.1-35.1 35.1h-26.5zM95.2 609.4V488.2c0-19.4 15.7-35.1 35.1-35.1h26.5v191.3h-26.5c-19.4 0-35.1-15.7-35.1-35.1zM561.5 149.6c0 23.4-15.6 43.3-36.9 49.7v44.9h-30v-44.9c-21.4-6.5-36.9-26.3-36.9-49.7 0-28.6 23.3-51.9 51.9-51.9s51.9 23.3 51.9 51.9z"></path>
+      </svg>
+      <h2 class="logo-text">Chatbot</h2>
+    </div>
+    <button id="close-chatbot" class="material-symbols-rounded">keyboard_arrow_down</button>
+  </div>
+
+  <!-- Chatbot Body -->
+   <div class="chat-body">
+    <div class="message bot-message">
+      <svg class="bot-avatar" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 1024 1024">
+        <path d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 106.8h81.5v111.1c0 .7.8 1.1 1.4.7l166.9-110.6 41.8-.8h117.4l43.6-.4c59 0 106.8-47.8 106.8-106.8V394.5c0-59-47.8-106.9-106.8-106.9zM351.7 448.2c0-29.5 23.9-53.5 53.5-53.5s53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5-53.5-23.9-53.5-53.5zm157.9 267.1c-67.8 0-123.8-47.5-132.3-109h264.6c-8.6 61.5-64.5 109-132.3 109zm110-213.7c-29.5 0-53.5-23.9-53.5-53.5s23.9-53.5 53.5-53.5 53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5zM867.2 644.5V453.1h26.5c19.4 0 35.1 15.7 35.1 35.1v121.1c0 19.4-15.7 35.1-35.1 35.1h-26.5zM95.2 609.4V488.2c0-19.4 15.7-35.1 35.1-35.1h26.5v191.3h-26.5c-19.4 0-35.1-15.7-35.1-35.1zM561.5 149.6c0 23.4-15.6 43.3-36.9 49.7v44.9h-30v-44.9c-21.4-6.5-36.9-26.3-36.9-49.7 0-28.6 23.3-51.9 51.9-51.9s51.9 23.3 51.9 51.9z"></path>
+      </svg>
+      <div class="message-text">Greetings visitor! <br /> How can I assist you today? </div>
+    </div>
+   </div>
+
+   <!-- Chatbot Footer -->
+    <div class="chat-footer">
+      <form action="#" class="chat-form">
+        <textarea placeholder="Message..." class="message-input" required></textarea>
+        <div class="chat-controls">
+          <button type="button" id="emoji-picker" class="material-symbols-outlined">sentiment_satisfied</button>
+          <div class="file-upload-wrapper">
+            <input type="file" accept="images/*" id="file-input" hidden>
+            <img src="#">
+            <button type="button" id="file-upload" class="material-symbols-rounded">attach_file</button>
+            <button type="button" id="file-cancel" class="material-symbols-rounded">close</button>
+
+          </div>
+          
+          <button type="submit" id="send-message" class="material-symbols-rounded">arrow_upward</button>
+        </div>
+      </form>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+<script src="script.js"></script>
+
+
+
+</body>
+</html>

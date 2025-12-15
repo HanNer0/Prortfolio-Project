@@ -58,6 +58,189 @@ body::before {
   color: transparent;
 }
 
+/* ============= GALLERY PART ============= */
+
+/* ===== Gallery Items ===== */
+.projects-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px; /* space between each image section */
+  padding: 60px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.gallery-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  max-width: 1400px;
+  gap: 50px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* ===== First Image Centered ===== */
+.title-text {
+  padding-top: 5rem;
+  text-align: center;
+  font-size: 7rem;
+  margin: 5rem 0;
+}
+
+.gallery-item.front-img {
+  flex-direction: column;
+}
+
+.gallery-item.front-img img {
+  width: 80%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 30px; /* smoother edges */
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.15); /* soft glow */
+  margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: floatGallery 4s ease-in-out infinite;
+}
+
+.gallery-item.front-img img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 60px rgba(255, 255, 255, 0.25);
+}
+
+.gallery-item.front-img .gallery-desc {
+  width: 100%;
+  text-align: center;
+  font-size: 1.3rem;
+  margin-top: 20px;
+}
+
+/* ===== Horizontal Swipe Wrapper ===== */
+.gallery-items-wrapper {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 20px 0;
+  width: 100%;
+}
+
+/* Hide scrollbar */
+.gallery-items-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.gallery-items-wrapper {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;     
+}
+
+/* Each gallery item in the horizontal scroller */
+.gallery-items-wrapper .gallery-item {
+  flex: 0 0 auto;
+  width: 300px;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+/* Hover / picking effect */
+.gallery-items-wrapper .gallery-item:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+/* Floating animation for all images */
+.gallery-item img {
+  animation: floatGallery 3s ease-in-out infinite;
+  border-radius: 20px;
+  box-shadow: 0 0 35px rgba(255, 255, 255, 0.12);
+}
+
+/* ===== Alternate Left/Right Images ===== */
+.gallery-item:not(.front-img) {
+  flex-wrap: wrap;
+}
+
+.gallery-item:nth-child(even):not(.front-img) {
+  flex-direction: row-reverse; /* right-left alternation */
+}
+
+.gallery-item:not(.front-img) img {
+  width: 50%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 0 35px rgba(255, 255, 255, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:not(.front-img) img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 45px rgba(255, 255, 255, 0.2);
+}
+
+.gallery-item .gallery-desc {
+  width: 40%;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.projects-gallery .gallery-intro {
+  text-align: center;           /* center the text */
+  font-size: 10rem;            /* bigger text */
+  line-height: 1.6;             /* easier to read */
+  max-width: 700px;             /* limits width for better appearance */
+  margin: 0 auto 2rem auto;     /* centers and adds spacing below */
+  color: #ffffff;               /* adjust color to match neon/futuristic theme */
+}
+
+/* ===== Highlight Best Work ===== */
+.best-tag {
+  font-weight: 700;
+  color: gold;
+  font-size: 1.1rem;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* ==== Animation ==== */
+@keyframes floatGallery {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .gallery-item {
+    flex-direction: column !important;
+    gap: 30px;
+  }
+
+  .gallery-item img,
+  .gallery-item .gallery-desc {
+    width: 100%;
+    max-height: none; /* scale naturally for smaller screens */
+  }
+
+  .gallery-items-wrapper .gallery-item {
+    width: 80%;
+  }
+}
+
+
 
 /* ============= CHATBOT PART ============= */
 

@@ -4,9 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const key = el.dataset.key;
 
     // Save ONLY if not already saved
-    if (!localStorage.getItem(key)) {
-      localStorage.setItem(key, el.innerText.trim());
-    }
+    if (localStorage.getItem(key) === null || localStorage.getItem(key).trim() === "") {
+  localStorage.setItem(key, el.innerText.trim());
+}
+
   });
 
 
@@ -262,11 +263,16 @@ function openEpic() {
   window.open("https://hanner0.github.io/Sia-Final-Project/");
 }
 
+function openGame() {
+  window.open("https://drive.google.com/file/d/1rVOLcNPkW6pR0DsndHiYDsh8XF-lYM3A/view?usp=sharing");
+}
+
+
+// ===== ACCOUNT LINKS ======
 function openGithub() {
-  window.open("https://github.com/HanNer0/Prortfolio-Project");
+  window.open("https://www.instagram.com/kulot_lng/");
 }
 
 function openInsta() {
   window.open("https://www.instagram.com/kulot_lng/");
 }
-

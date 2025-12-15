@@ -73,9 +73,9 @@
   <div class="overlay"></div>
 
   <div class="home-content autoShow">
-    <h1>Hi, It's a me~ <span>Rhoanne</span></h1>
-    <h3>I'm a <span>Web Developer</span></h3>
-    <p id="hero-description" data-key="home_desc">"I am currently honing my skills in web developing, game developing and arts as part of my studies at La Consolacion University of the Philippines."</p>
+    <h1 id="hero-name">Hi, It's a me~ <span>Rhoanne</span></h1>
+    <h3 id="hero-role" data-key="hero-role">I'm a <span>Web Developer</span></h3>
+    <p id="hero-description" data-key="home-desc">"I am currently honing my skills in web developing, game developing and arts as part of my studies at La Consolacion University of the Philippines."</p>
 
     <div class="social-icons fadeUp">
       <a href="#" onclick="openGithub()"><i class="bx bxl-github"></i></a>
@@ -91,7 +91,7 @@
   </div>
 
   <div class="home-img">
-    <img data-img="home_image" alt="Profile Image" src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/Hoshino%20AI.jpeg" alt="">
+    <img id="home-image" data-img="home-image" alt="Profile Image" src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/Hoshino%20AI.jpeg" alt="">
   </div>
 </section>
 
@@ -102,12 +102,12 @@
   <div class="overlay"></div>
 
   <div class="about-img">
-    <img data-img="home_image" alt="Profile Image" src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/Hoshino%20AI.jpeg" alt="about profile img" class="imageReveal">
+    <img id="home-image" data-img="home-image" alt="Profile Image" src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/Hoshino%20AI.jpeg" alt="about profile img" class="imageReveal">
   </div>
 
   <div class="about-content autoShow ">
-    <h2 id="about-title" data-key="about_title">About <span class="gradient-text">Me</span></h2>
-    <p id="about-description" data-key="about_desc">I'm currently a student at La Consolacion University of the Philippines, focusing on web development, game development, and art. My goal is to combine these skills to create dynamic and engaging digital projects.</p>
+    <h2 id="about-title" data-key="about-title">About <span class="gradient-text">Me</span></h2>
+    <p id="about-description" data-key="about-desc">I'm currently a student at La Consolacion University of the Philippines, focusing on web development, game development, and art. My goal is to combine these skills to create dynamic and engaging digital projects.</p>
     <a href="#" class="btn">Read More</a>
   </div>
 </section>
@@ -124,24 +124,24 @@
     <div class="service-box fadeUp">
       <div class="service-info">
         <i class="bx bxl-figma"></i>
-        <h4 data-key="service_uiux_title">UI / UX Design</h4>
-        <p data-key="service_uiux_desc">My projects have given me hands-on experience using Figma for UI/UX design, where I've focused on creating intuitive and user-friendly interfaces.</p>
+        <h4 id="service-uiux-title" data-key="service-uiux-title">UI / UX Design</h4>
+        <p id="service-uiux-desc" data-key="service-uiux-desc">My projects have given me hands-on experience using Figma for UI/UX design, where I've focused on creating intuitive and user-friendly interfaces.</p>
       </div>
     </div>
 
     <div class="service-box fadeUp">
       <div class="service-info">
         <i class="bx bx-joystick"></i>
-        <h4 data-key="service_game_title">Game Development</h4>
-        <p data-key="service_game_desc">Through my game development projects, I've gained hands-on experience in the fundamentals of game design and development.</p>
+        <h4 id="service-game-title" data-key="service-game-title">Game Development</h4>
+        <p id="service-game-desc" data-key="service-game-desc">Through my game development projects, I've gained hands-on experience in the fundamentals of game design and development.</p>
       </div>
     </div>
 
     <div class="service-box fadeUp">
       <div class="service-info">
         <i class="bx bx-image"></i>
-        <h4 data-key="service_art_title">Art</h4>
-        <p data-key="service_art_desc"> I also have a background in digital art, which I apply to my web and game development projects to create custom assets and graphics.</p>
+        <h4 id="service-art-title" data-key="service-art-title">Art</h4>
+        <p id="service-art-desc" data-key="service-art-desc"> I also have a background in digital art, which I apply to my web and game development projects to create custom assets and graphics.</p>
       </div>
     </div>
   </div>
@@ -157,46 +157,46 @@
 
   <ul class="projects-list">
     <li class="project-item fadeUp">
-      <img src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/GOYO.jpg" alt="GOYO Project" class="floating-image">
+      <img data-img="project1-image" src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/GOYO.jpg" alt="GOYO Project" class="floating-image">
       <div class="project-info">
-        <h3 id="project1-title" data-key="project_goyo_title">
+        <h3 id="project1-title" data-key="project-goyo-title">
           GOYO</h3>
-        <p id="project1-description" data-key="project_goyo_desc">
+        <p id="project1-description" data-key="project-goyo-desc">
           This was a collaborative project from my junior year, where our team focused on making a sleep monitoring app to help users track their sleep and improve their overall well-being.</p>
         <a  class="btn" onclick="openGoyo()">Review Project</a>
       </div>
     </li>
 
     <li class="project-item fadeUp">
-      <img src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/Epic%20Website.png" alt="Epic Saga Fanpage" class="floating-image">
+      <img data-img="project2-image" src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/Epic%20Website.png" alt="Epic Saga Fanpage" class="floating-image">
       <div class="project-info">
-        <h3 id="project2-title" data-key="project_epic_title">
+        <h3 id="project2-title" data-key="project-epic-title">
           Epic Saga Fanpage</h3>
-        <p id="project2-description" data-key="project_epic_desc">
+        <p id="project2-description" data-key="project-epic-desc">
           This is a collection of my artwork I've created over the years since I began my studies, where I've explored different mediums to develop a personal style and build a wide range of artistic skills.</p>
         <a class="btn" onclick="openEpic()">Review Project</a>
       </div>
     </li>
 
     <li class="project-item fadeUp">
-      <img src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/Game%20Samples.jpg" alt="Game Samples" class="floating-image">
+      <img data-img="project3-image" src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/Game%20Samples.jpg" alt="Game Samples" class="floating-image">
       <div class="project-info">
-        <h3 id="project3-title" data-key="project_game_title">
+        <h3 id="project3-title" data-key="project-game-title">
           Game Samples</h3>
-        <p id="project3-description" data-key="project_game_desc">
+        <p id="project3-description" data-key="project-game-desc">
           This is a collection of game samples I created for a personal project, reflecting my own journey to apply my skills in game development and visual design. Samples from the internet help me adjust to this field.</p>
-        <a href="#" class="btn">Review Project</a>
+        <a href="#" onclick="openGame()" class="btn">Review Project</a>
       </div>
     </li>
 
     <li class="project-item fadeUp">
-      <img src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/Art%20Samples.jpg" alt="Art Samples" class="floating-image">
+      <img data-img="project4-image" src="https://raw.githubusercontent.com/HanNer0/Prortfolio-Project/refs/heads/main/images/Art%20Samples.jpg" alt="Art Samples" class="floating-image">
       <div class="project-info">
-        <h3 id="project4-title" data-key="project_art_title">
+        <h3 id="project4-title" data-key="project-art-title">
           Art Samples</h3>
-        <p id="project4-description" data-key="project_art_desc">
+        <p id="project4-description" data-key="project-art-desc">
           This is a collection of my artwork I've created over the years since I began my studies, where I've explored different mediums to develop a personal style and build a wide range of artistic skills.</p>
-        <a href="#" class="btn">Review Project</a>
+        <a href="gallery.html" class="btn">Review Project</a>
       </div>
     </li>
   </ul>
@@ -306,7 +306,60 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
-<script src="script.js"></script>
+<script src="script.js"></script>   
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // TEXTS
+  const textElements = [
+    {id: "home-desc", key: "home-desc"},
+    {id: "about-desc", key: "about-desc"},
+    {id: "service-uiux-title", key: "service-uiux-title"},
+    {id: "service-uiux-desc", key: "service-uiux-desc"},
+    {id: "service-game-title", key: "service-game-title"},
+    {id: "service-game-desc", key: "service-game-desc"},
+    {id: "service-art-title", key: "service-art-title"},
+    {id: "service-art-desc", key: "service-art-desc"},
+    {id: "project-goyo-title", key: "project-goyo-title"},
+    {id: "project-goyo-desc", key: "project-goyo-desc"},
+    {id: "project-epic-title", key: "project-epic-title"},
+    {id: "project-epic-desc", key: "project-epic-desc"},
+    {id: "project-game-title", key: "project-game-title"},
+    {id: "project-game-desc", key: "project-game-desc"},
+    {id: "project-art-title", key: "project-art-title"},
+    {id: "project-art-desc", key: "project-art-desc"},
+    {id: "footer_text", key: "footer_text"}
+  ];
+
+  textElements.forEach(el => {
+    const element = document.getElementById(el.id);
+    if (element) {
+      localStorage.setItem(el.key, element.textContent);
+    }
+  });
+
+  // IMAGES
+  const imgElements = [
+  {id: "home-image", key: "home-image"},
+  {id: "project1-img", key: "project1-image"},
+  {id: "project2-img", key: "project2-image"},
+  {id: "project3-img", key: "project3-image"},
+  {id: "project4-img", key: "project4-image"},
+];
+
+
+  imgElements.forEach(img => {
+    const element = document.getElementById(img.id);
+    if (element) {
+      localStorage.setItem(img.key, element.src);
+    }
+  });
+});
+</script>
+
+
 
 
 

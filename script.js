@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const chatbotToggler = document.querySelector("#chatbot-toggler");
   const closeChatbot = document.querySelector("#close-chatbot");
 
-  API_KEY = "AIzaSyBKxikU-Q2EwYW26CYyS_1YWLc3NFNKqVE";
+  API_KEY = "AIzaSyBpxxYT_TKnvFPGnUybV8yPazxh4vZ8PDM";
   const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
 
   // ✅ ✅ SYSTEM PROMPT (YOUR PORTFOLIO INFO)
@@ -276,3 +276,4 @@ function openGithub() {
 function openInsta() {
   window.open("https://www.instagram.com/kulot_lng/");
 }
+
